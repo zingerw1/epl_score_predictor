@@ -133,13 +133,13 @@ epl-score-predictor/
 
 ## 📸 Screenshots
 
-### Main Interface
+### Light Mode
 
-![Main Interface](screenshots/whitemode.png)
+![Main Interface](static/screenshots/whitemode.png)
 
-### Prediction Result
+### Dark Mode
 
-![Prediction Result](screenshots/score.png)
+![Prediction Result](static/screenshots/score.png)
 
 ---
 
