@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestRegressor
+from xgboost import XGBRegressor
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error
 import pickle
@@ -26,13 +26,13 @@ def train_models(df):
     X_test_scaled = scaler.transform(X_test)
 
     # Home goals model
-    home_model = RandomForestRegressor(random_state=42, n_estimators=100)
+    home_model = XGBRegressor(random_state=42, n_estimators=200, max_depth=6, learning_rate=0.1, objective='count:poisson')
     home_model.fit(X_train_scaled, y_home_train)
     home_pred = home_model.predict(X_test_scaled)
     print(f"Home Goals MSE: {mean_squared_error(y_home_test, home_pred)}")
 
     # Away goals model
-    away_model = RandomForestRegressor(random_state=42, n_estimators=100)
+    away_model = XGBRegressor(random_state=42, n_estimators=200, max_depth=6, learning_rate=0.1, objective='count:poisson')
     away_model.fit(X_train_scaled, y_away_train)
     away_pred = away_model.predict(X_test_scaled)
     print(f"Away Goals MSE: {mean_squared_error(y_away_test, away_pred)}")

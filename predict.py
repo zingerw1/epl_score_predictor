@@ -60,8 +60,8 @@ def predict_score(home_team, away_team):
                           home_form, away_form, home_strength, away_strength, form_interaction, strength_interaction]])
 
     features_scaled = scaler.transform(features)
-    home_goals = round(home_model.predict(features_scaled)[0])
-    away_goals = round(away_model.predict(features_scaled)[0])
+    home_goals = int(home_model.predict(features_scaled)[0])
+    away_goals = int(away_model.predict(features_scaled)[0])
     return home_goals, away_goals
 
 if __name__ == "__main__":
