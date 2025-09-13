@@ -3,7 +3,6 @@
 [![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-2.0+-lightgrey.svg)](https://flask.palletsprojects.com/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange.svg)](https://scikit-learn.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 A sophisticated machine learning project to predict scores for English Premier League matches using Random Forest Regression. Built with Flask for an intuitive web interface. ⚽📊💻
 
@@ -11,50 +10,51 @@ A sophisticated machine learning project to predict scores for English Premier L
 
 ## 📋 Table of Contents
 
-- [✨ Features](#✨-features)  
-- [🔧 How it Works](#🔧-how-it-works)  
-- [📋 Prerequisites](#📋-prerequisites)  
-- [🚀 Installation](#🚀-installation)  
-- [🎯 Usage](#🎯-usage)  
-- [📁 Project Structure](#📁-project-structure)  
-- [📸 Screenshots](#📸-screenshots)  
-- [🤝 Contributing](#🤝-contributing)  
-- [📄 License](#📄-license)  
+- [✨ Features](#✨-features)
+- [🔧 How it Works](#🔧-how-it-works)
+- [📋 Prerequisites](#📋-prerequisites)
+- [🚀 Installation](#🚀-installation)
+- [🎯 Usage](#🎯-usage)
+- [📁 Project Structure](#📁-project-structure)
+- [📸 Screenshots](#📸-screenshots)
+- [🤝 Contributing](#🤝-contributing)
+- [📄 License](#📄-license)
 
 ---
 
 ## ✨ Features
 
-- ⚡ **Accurate Predictions**: Uses Random Forest Regression trained on historical EPL data for reliable score predictions.  
-- 📊 **Comprehensive Data**: Includes advanced features like shots on target, corners, fouls, yellow & red cards for better accuracy.  
-- 🖥️ **User-Friendly Interface**: Clean, responsive web app built with Flask, Bootstrap, and Font Awesome.  
-- 🌗 **Dark/Light Theme**: Toggle between light and dark modes for a better user experience.  
-- 🏟️ **Team Crests**: Displays official team logos for visual appeal.  
-- ⚠️ **Error Handling**: Provides clear messages for unknown teams or errors.  
+- ⚡ **Accurate Predictions**: Uses Random Forest Regression trained on historical EPL data for reliable score predictions.
+- 📊 **Comprehensive Data**: Includes advanced features like shots on target, corners, fouls, yellow & red cards for better accuracy.
+- 🖥️ **User-Friendly Interface**: Clean, responsive web app built with Flask, Bootstrap, and Font Awesome.
+- 🌗 **Dark/Light Theme**: Toggle between light and dark modes for a better user experience.
+- 🏟️ **Team Crests**: Displays official team logos for visual appeal.
+- ⚠️ **Error Handling**: Provides clear messages for unknown teams or errors.
 
 ---
 
 ## 🔧 How it Works
 
-1. **📥 Data Collection**: Downloads historical EPL match data from football-data.co.uk for seasons 2014-15 to 2024-25.  
+1. **📥 Data Collection**: Downloads historical EPL match data from football-data.co.uk for seasons 2014-15 to 2022-23.
 
-2. **🧹 Preprocessing**: Cleans the data, selects relevant columns (`HomeTeam`, `AwayTeam`, `FTHG`, `FTAG`), and encodes team names using LabelEncoder.  
+2. **🧹 Preprocessing**: Cleans the data, selects relevant columns (`HomeTeam`, `AwayTeam`, `FTHG`, `FTAG`), and encodes team names using LabelEncoder.
 
 3. **🤖 Model Training**: Trains two Random Forest Regression models:
-   - One for predicting **home team goals** (FTHG)  
-   - One for predicting **away team goals** (FTAG)  
-   - Features: Encoded home & away teams, shots on target, corners, fouls, yellow/red cards.  
 
-4. **🎯 Prediction**: For given home and away teams, encodes them and uses the models to predict goals.  
+   - One for predicting **home team goals** (FTHG)
+   - One for predicting **away team goals** (FTAG)
+   - Features: Encoded home & away teams, shots on target, corners, fouls, yellow/red cards.
 
-5. **🖥️ Web Interface**: A Flask app where users can input teams and see the predicted score with team crests.  
+4. **🎯 Prediction**: For given home and away teams, encodes them and uses the models to predict goals.
+
+5. **🖥️ Web Interface**: A Flask app where users can input teams and see the predicted score with team crests.
 
 ---
 
 ## 📋 Prerequisites
 
-- 🐍 Python 3.7+  
-- 🌐 Internet connection for data download  
+- 🐍 Python 3.7+
+- 🌐 Internet connection for data download
 
 ---
 
@@ -104,9 +104,10 @@ python app.py
 ```
 
 2. **Access the App**:
-- Open your browser at `http://localhost:5000`  
-- Select **home** and **away** teams from the dropdowns  
-- Click **Predict Score** ⚡ to see the result with team crests 🏟️  
+
+- Open your browser at `http://localhost:5000`
+- Select **home** and **away** teams from the dropdowns
+- Click **Predict Score** ⚡ to see the result with team crests 🏟️
 
 ---
 
@@ -134,17 +135,11 @@ epl-score-predictor/
 
 ### Main Interface
 
-![Main Interface](screenshots/main_interface.png)  
+![Main Interface](screenshots/whitemode.png)
 
 ### Prediction Result
 
-![Prediction Result](screenshots/prediction_result.png)  
-
-### Dark Theme
-
-![Dark Theme](screenshots/dark_theme.png)  
-
-_Add your screenshots in the `screenshots/` folder._  
+![Prediction Result](screenshots/score.png)
 
 ---
 
@@ -152,23 +147,23 @@ _Add your screenshots in the `screenshots/` folder._
 
 Contributions are welcome! Please follow these steps:
 
-1. Fork the repository 🍴  
-2. Create a feature branch: `git checkout -b feature/AmazingFeature` 🌟  
-3. Commit your changes: `git commit -m 'Add some AmazingFeature'` 📝  
-4. Push to the branch: `git push origin feature/AmazingFeature` 🚀  
-5. Open a Pull Request 🔄  
+1. Fork the repository 🍴
+2. Create a feature branch: `git checkout -b feature/AmazingFeature` 🌟
+3. Commit your changes: `git commit -m 'Add some AmazingFeature'` 📝
+4. Push to the branch: `git push origin feature/AmazingFeature` 🚀
+5. Open a Pull Request 🔄
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** 🟢 — see the [LICENSE](LICENSE) file for details.  
+This project is licensed under the **MIT License** 🟢 — see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 📝 Notes
 
-- Models use Random Forest Regression with additional features for improved accuracy.  
-- Features include team encodings, shots on target, corners, fouls, cards, and red cards.  
-- ⚠️ Check team name spelling if you get "Unknown team(s)" errors.  
+- Models use Random Forest Regression with additional features for improved accuracy.
+- Features include team encodings, shots on target, corners, fouls, cards, and red cards.
+- ⚠️ Check team name spelling if you get "Unknown team(s)" errors.
 - For issues, please open an issue on GitHub 🐙.
