@@ -9,27 +9,42 @@ teams = sorted(le.classes_)
 
 # Map all 20 EPL teams to crest URLs
 crest_urls = {
-    "Arsenal": "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
-    "Aston Villa": "https://upload.wikimedia.org/wikipedia/en/9/9f/Aston_Villa_FC_crest_%282016%29.png",
-    "Bournemouth": "https://upload.wikimedia.org/wikipedia/en/6/61/AFC_Bournemouth.png",
-    "Brentford": "https://upload.wikimedia.org/wikipedia/en/0/0c/Brentford_FC_crest.png",
-    "Brighton": "https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg",
-    "Chelsea": "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
-    "Crystal Palace": "https://upload.wikimedia.org/wikipedia/en/0/0c/Crystal_Palace_FC_logo.svg",
-    "Everton": "https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg",
-    "Fulham": "https://upload.wikimedia.org/wikipedia/en/e/e6/Fulham_FC_%28logo%29.svg",
-    "Leeds United": "https://upload.wikimedia.org/wikipedia/en/0/0c/Leeds_United_Logo.png",
-    "Leicester City": "https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg",
-    "Liverpool": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
-    "Manchester City": "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
-    "Manchester United": "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
-    "Newcastle United": "https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg",
-    "Nottingham Forest": "https://upload.wikimedia.org/wikipedia/en/7/7b/Nottingham_Forest_logo.svg",
-    "Southampton": "https://upload.wikimedia.org/wikipedia/en/c/c9/Southampton_FC.svg",
-    "Tottenham": "https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg",
-    "West Ham": "https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg",
-    "Wolves": "https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg"
+    "Arsenal": "/static/images/Arsenal_FC.svg",
+    "Aston Villa": "/static/images/aston-villa-logo.svg",
+    "Bournemouth": "/static/images/afc-bournemouth.svg",
+    "Brentford": "/static/images/brentford-fc-logo.svg",
+    "Brighton": "/static/images/brighton-hove-albion-logo.svg",
+    "Burnley": "/static/images/Burnley_FC.svg",
+    "Cardiff": "/static/images/cardiff-city-fc-logo.svg",
+    "Chelsea": "/static/images/chelsea-fc.svg",
+    "Crystal Palace": "/static/images/crystal-palace-fc.svg",
+    "Everton": "/static/images/everton-fc-2000-2013.svg",
+    "Fulham": "/static/images/fulham-fc-logo.svg",
+    "Hull": "/static/images/hull-city-afc-2014-2019.svg",
+    "Ipswich": "/static/images/Ipswich_Town_FC.svg",
+    "Leeds": "/static/images/leeds-united-fc.svg",
+    "Leicester": "/static/images/leicester-city-fc.svg",
+    "Liverpool": "/static/images/Liverpool_FC.svg",
+    "Luton": "/static/images/luton-town-fc.zip",
+    "Man City": "/static/images/manchester-city-fc.svg",
+    "Man United": "/static/images/manchester-united-f.c.-.svg",
+    "Middlesbrough": "/static/images/middlesbrough-fc-logo.svg",
+    "Newcastle": "/static/images/newcastle-united-fc.svg",
+    "Norwich": "/static/images/norwich-logo-vector.png",
+    "Nott'm Forest": "/static/images/Nottingham_Forest.svg",
+    "QPR": "/static/images/Queens_Park_Rangers_FC.svg",
+    "Sheffield United": "/static/images/sheffield-united-logo.svg",
+    "Southampton": "/static/images/southampton-fc.svg",
+    "Stoke": "/static/images/stoke-city-fc-logo.svg",
+    "Sunderland": "/static/images/sunderland-afc-logo.svg",
+    "Swansea": "/static/images/Swansea_City.svg",
+    "Tottenham": "/static/images/tottenham-hotspur-fc-logo.png",
+    "Watford": "/static/images/watford-fc-logo.svg",
+    "West Brom": "/static/images/west-bromwich.svg",
+    "West Ham": "/static/images/west-ham-united-fc.svg",
+    "Wolves": "/static/images/Wolverhampton_Wanderers_FC.svg"
 }
+
 
 HTML_TEMPLATE = """
 <!DOCTYPE html>
@@ -45,31 +60,32 @@ HTML_TEMPLATE = """
         body {
             font-family: 'Montserrat', sans-serif;
             background:
-                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url('https://images.unsplash.com/photo-1600932710359-8df3e25a2c8f?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+                linear-gradient(rgba(200,200,200,0.6), rgba(200,200,200,0.6)),
+                url('/static/images/epl_background.jpg') no-repeat center center fixed;
             background-size: cover;
             min-height: 100vh;
-            color: #f5f5f5;
-            transition: background 0.3s ease;
+            color: #333;
+            transition: all 0.3s ease;
         }
         body.dark {
             background:
                 linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-                url('https://images.unsplash.com/photo-1600932710359-8df3e25a2c8f?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+                url('/static/images/epl_background.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #e0e0e0;
         }
         .card {
             border: none;
             border-radius: 20px;
-            background: rgba(255,255,255,0.12);
+            background: rgba(200,200,200,0.12);
             backdrop-filter: blur(15px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-            color: #fff;
+            color: #333;
             transition: all 0.3s ease;
         }
         body.dark .card {
             background: rgba(30,30,30,0.6);
+            color: #f5f5f5;
         }
         .btn-predict {
             background: linear-gradient(45deg, #a2c2e3, #5d88bb);
@@ -81,16 +97,20 @@ HTML_TEMPLATE = """
             color: #fff;
             transition: all 0.3s ease;
         }
-        .btn-predict:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        body.dark .btn-predict {
+            background: linear-gradient(45deg, #5d88bb, #3b5f8c);
+            color: #fff;
         }
         .score-display {
             font-size: 4rem;
             font-weight: 700;
+            color: #333;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            transition: color 0.3s ease;
+        }
+        body.dark .score-display {
             color: #fff;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-            transition: color 0.3s ease;
         }
         .team-logo {
             width: 70px;
@@ -113,11 +133,24 @@ HTML_TEMPLATE = """
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
+            border-color: #333;
+            color: #333;
+        }
+        body.dark .theme-toggle .btn {
+            border-color: #fff;
+            color: #fff;
         }
         .form-select {
             border-radius: 10px;
             border: 2px solid #ddd;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
+            background-color: #fff;
+            color: #333;
+        }
+        body.dark .form-select {
+            border-color: #555;
+            background-color: #222;
+            color: #eee;
         }
         .form-select:focus {
             border-color: #5d88bb;
@@ -125,6 +158,16 @@ HTML_TEMPLATE = """
         }
         .alert {
             border-radius: 10px;
+        }
+        body.dark footer { color: #fff; }
+        body.dark footer a { color: #fff; }
+        body.dark .text-dark { color: #fff !important; }
+        .epl-logo {
+            filter: invert(0);
+            transition: filter 0.3s ease;
+        }
+        body.dark .epl-logo {
+            filter: invert(1);
         }
         @media (max-width: 768px) {
             .score-display { font-size: 3rem; }
@@ -142,7 +185,7 @@ HTML_TEMPLATE = """
         <div class="row justify-content-center">
             <div class="col-md-10 col-lg-8">
                 <div class="card p-5 text-center">
-                    <img src="https://freebiesupply.com/logos/premier-league-logo/" alt="EPL Logo" style="width:120px; margin-bottom:20px;">
+                    <img src="/static/images/Premier_League_Logo.svg" alt="EPL Logo" style="width:120px; margin-bottom:20px;" class="epl-logo">
                     <h1 class="mb-4 fw-bold">EPL Score Predictor</h1>
                     <form method="post">
                         <div class="row g-3">
@@ -156,7 +199,7 @@ HTML_TEMPLATE = """
                                 </select>
                             </div>
                             <div class="col-md-2 text-center align-self-end">
-                                <span class="fs-1 fw-bold text-light">VS</span>
+                                <span class="fs-1 fw-bold text-dark">VS</span>
                             </div>
                             <div class="col-md-5">
                                 <label for="away_team" class="form-label fw-bold"><i class="fas fa-plane me-2"></i>Away Team</label>
@@ -206,14 +249,24 @@ HTML_TEMPLATE = """
             }
         });
 
+        // Apply saved theme
         if (localStorage.getItem('theme') === 'dark') {
             body.classList.add('dark');
             icon.className = 'fas fa-sun';
+        } else {
+            body.classList.remove('dark');
+            icon.className = 'fas fa-moon';
         }
     </script>
+    <footer class="text-center mt-5" style="color: #666; font-size: 0.9rem;">
+        Made by Kagiso Setwaba |
+        <a href="https://github.com/zingerw1" target="_blank" style="color: #666;"><i class="fab fa-github"></i> GitHub</a> |
+        <a href="https://www.linkedin.com/in/kagiso-setwaba-ab465b261/" target="_blank" style="color: #666;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </footer>
 </body>
 </html>
 """
+
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
