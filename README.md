@@ -8,11 +8,11 @@ A machine learning project to predict scores for English Premier League matches.
 
 2. **Preprocessing**: Cleans the data, selects relevant columns (HomeTeam, AwayTeam, FTHG, FTAG), and encodes team names using LabelEncoder.
 
-3. **Model Training**: Trains two Linear Regression models:
+3. **Model Training**: Trains two Random Forest Regression models:
 
    - One for predicting home team goals (FTHG)
    - One for predicting away team goals (FTAG)
-   - Features: Encoded home team and away team.
+   - Features: Encoded home team and away team, shots on target, corners, fouls, cards, red cards.
 
 4. **Prediction**: For given home and away teams, encodes them and uses the models to predict goals.
 
@@ -26,12 +26,51 @@ A machine learning project to predict scores for English Premier League matches.
 - `predict.py`: Prediction function
 - `app.py`: Flask web app
 
-## Usage
+## Prerequisites
 
-1. Install dependencies: `pip install -r requirements.txt`
-2. Download data: `python data.py`
-3. Train model: `python model.py`
-4. Run app: `python app.py`
-5. Open browser to `http://localhost:5000`, enter teams, predict.
+- Python 3.7+
+- Internet connection
 
-Note: Models are simple linear regression; predictions may not be accurate. For better accuracy, more features like team stats, form, etc., could be added.
+## Setup Instructions
+
+1. **Create Virtual Environment** (optional but recommended):
+
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate  # Windows
+   source .venv/bin/activate  # macOS/Linux
+   ```
+
+2. **Install Dependencies**:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Download Data**:
+
+   ```bash
+   python data.py
+   ```
+
+4. **Train Models**:
+
+   ```bash
+   python model.py
+   ```
+
+5. **Run Application**:
+
+   ```bash
+   python app.py
+   ```
+
+6. **Access the App**:
+   - Open browser to `http://localhost:5000`
+   - Enter team names and predict scores
+
+## Notes
+
+- Models use Random Forest Regression with additional features for improved accuracy
+- Features include team encodings, shots on target, corners, fouls, cards, and red cards
+- Check team name spelling if you get "Unknown team(s)" errors
