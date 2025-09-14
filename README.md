@@ -4,7 +4,7 @@
 [![Flask](https://img.shields.io/badge/Flask-2.0+-lightgrey.svg)](https://flask.palletsprojects.com/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange.svg)](https://scikit-learn.org/)
 
-A sophisticated machine learning project to predict scores for English Premier League matches using Random Forest Regression. Built with Flask for an intuitive web interface. ⚽📊💻
+A sophisticated machine learning project to predict scores for English Premier League matches using XGBoost Regression. Built with Flask for an intuitive web interface. ⚽📊💻
 
 ## 📋 Table of Contents
 
@@ -22,8 +22,8 @@ A sophisticated machine learning project to predict scores for English Premier L
 
 ## ✨ Features
 
-- ⚡ **Accurate Predictions**: Uses XGBoost Regression trained on historical EPL data for reliable score predictions.
-- 📊 **Comprehensive Data**: Includes advanced features like shots on target, corners, fouls, yellow & red cards for better accuracy.
+- ⚡ **Accurate Predictions**: Uses XGBoost Regression with Poisson objective trained on 25 seasons of EPL data for reliable score predictions.
+- 📊 **Advanced Features**: Includes rolling averages, team form, strength metrics, and interaction features for superior accuracy.
 - 🖥️ **User-Friendly Interface**: Clean, responsive web app built with Flask, Bootstrap, and Font Awesome.
 - 🌗 **Dark/Light Theme**: Toggle between light and dark modes for a better user experience.
 - 🏟️ **Team Crests**: Displays official team logos for visual appeal.
@@ -35,13 +35,13 @@ A sophisticated machine learning project to predict scores for English Premier L
 
 1. **📥 Data Collection**: Downloads historical EPL match data from football-data.co.uk for seasons 2000-01 to 2024-25.
 
-2. **🧹 Preprocessing**: Cleans the data, selects relevant columns (`HomeTeam`, `AwayTeam`, `FTHG`, `FTAG`), and encodes team names using LabelEncoder.
+2. **🧹 Preprocessing**: Cleans the data, selects relevant columns, encodes team names using LabelEncoder, and adds advanced features like rolling averages, form, strength, and interactions.
 
-3. **🤖 Model Training**: Trains two Random Forest Regression models:
+3. **🤖 Model Training**: Trains two XGBoost Regression models with Poisson objective:
 
    - One for predicting **home team goals** (FTHG)
    - One for predicting **away team goals** (FTAG)
-   - Features: Encoded home & away teams, shots on target, corners, fouls, yellow/red cards.
+   - Features: Encoded teams, shots on target, corners, fouls, cards, rolling goals/goals against, form, strength, and interactions.
 
 4. **🎯 Prediction**: For given home and away teams, encodes them and uses the models to predict goals.
 
@@ -190,7 +190,7 @@ This project is licensed under the **MIT License** 🟢 — see the [LICENSE](LI
 
 ## 📝 Notes
 
-- Models use Random Forest Regression with additional features for improved accuracy.
-- Features include team encodings, shots on target, corners, fouls, cards, and red cards.
+- Models use XGBoost Regression with Poisson objective and advanced features for improved accuracy.
+- Features include team encodings, shots on target, corners, fouls, cards, rolling stats, form, strength, and interactions.
 - ⚠️ Check team name spelling if you get "Unknown team(s)" errors.
 - For issues, please open an issue on GitHub 🐙.
