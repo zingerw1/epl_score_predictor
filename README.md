@@ -6,11 +6,13 @@
 
 A sophisticated machine learning project to predict scores for English Premier League matches using XGBoost Regression. Built with Flask for an intuitive web interface. ⚽📊💻
 
+
 ## 📋 Table of Contents
 
 - [✨ Features](#✨-features)
 - [🔧 How it Works](#🔧-how-it-works)
 - [📋 Prerequisites](#📋-prerequisites)
+- [💻 Tech Stack](#💻-tech-stack)
 - [🚀 Installation](#🚀-installation)
 - [🎯 Usage](#🎯-usage)
 - [📁 Project Structure](#📁-project-structure)
@@ -56,7 +58,13 @@ A sophisticated machine learning project to predict scores for English Premier L
 
 ---
 
-## 🚀 Installation
+## 💻 Tech Stack
+
+![Python](https://img.shields.io/badge/Python-3.7+-blue.svg) ![Flask](https://img.shields.io/badge/Flask-2.0+-lightgrey.svg) ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange.svg) ![XGBoost](https://img.shields.io/badge/XGBoost-1.0+-green.svg) ![pandas](https://img.shields.io/badge/pandas-1.0+-blue.svg) ![NumPy](https://img.shields.io/badge/NumPy-1.0+-blue.svg) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+---
+
+## Installation
 
 1. **Clone the Repository**:
 
@@ -144,7 +152,7 @@ epl-score-predictor/
 
 ### Data Processing
 
-![Processing Dataset](static/screenshots/Processing_dataset.png)
+![Processing Dataset](static/screenshots/Processing%20dataset.png)
 
 ![Processing Dataset Finished](static/screenshots/processing_dataset_finished.png)
 
