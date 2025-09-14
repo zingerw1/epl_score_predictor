@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 # Load models and teams
 _, _, le, _, _ = load_models()
-teams = sorted(le.classes_)
 
 # Map all 20 EPL teams to crest URLs
 crest_urls = {
@@ -44,6 +43,9 @@ crest_urls = {
     "West Ham": "/static/images/west-ham-united-fc.svg",
     "Wolves": "/static/images/Wolverhampton_Wanderers_FC.svg"
 }
+
+# Use all teams that have crest images, not just those in the current data
+teams = sorted(crest_urls.keys())
 
 
 HTML_TEMPLATE = """

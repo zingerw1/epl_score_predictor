@@ -24,7 +24,7 @@ A sophisticated machine learning project to predict scores for English Premier L
 
 ## ✨ Features
 
-- ⚡ **Accurate Predictions**: Uses Random Forest Regression trained on historical EPL data for reliable score predictions.
+- ⚡ **Accurate Predictions**: Uses XGBoost Regression trained on historical EPL data for reliable score predictions.
 - 📊 **Comprehensive Data**: Includes advanced features like shots on target, corners, fouls, yellow & red cards for better accuracy.
 - 🖥️ **User-Friendly Interface**: Clean, responsive web app built with Flask, Bootstrap, and Font Awesome.
 - 🌗 **Dark/Light Theme**: Toggle between light and dark modes for a better user experience.
@@ -109,6 +109,16 @@ python app.py
 - Select **home** and **away** teams from the dropdowns
 - Click **Predict Score** ⚡ to see the result with team crests 🏟️
 
+3. **Predict League Winner**:
+
+```bash
+python winner_predictor.py
+```
+
+- This will simulate a full EPL season using the trained models
+- Displays the predicted winner and points table
+  python winner_predictor.py
+
 ---
 
 ## 📁 Project Structure
@@ -119,6 +129,7 @@ epl-score-predictor/
 ├── data.py                # Data download & preprocessing 📥
 ├── model.py               # Model training script 🤖
 ├── predict.py             # Prediction functions 🎯
+├── winner_predictor.py    # League winner prediction 🏆
 ├── requirements.txt       # Python dependencies 📦
 ├── epl_data.csv           # Processed dataset 🗃️
 ├── label_encoder.pkl      # Encoded team labels 🔢
@@ -133,13 +144,31 @@ epl-score-predictor/
 
 ## 📸 Screenshots
 
-### Light Mode
+### Data Processing
+
+![Processing Dataset](static/screenshots/Processing%20dataset.png)
+
+![Processing Dataset Finished](static/screenshots/processing_dataset_finished.png)
+
+### Model Training
+
+![Model Training](static/screenshots/model_py.png)
+
+### Model Evaluation
+
+![Model Evaluation](static/screenshots/evaluate_py.png)
+
+### Main Interface
 
 ![Main Interface](static/screenshots/whitemode.png)
 
-### Dark Mode
+### Prediction Result
 
 ![Prediction Result](static/screenshots/score.png)
+
+### Flask App Running
+
+![Flask App](static/screenshots/app_py.png)
 
 ---
 
