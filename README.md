@@ -35,7 +35,7 @@ A sophisticated machine learning project to predict scores for English Premier L
 
 ## 🔧 How it Works
 
-1. **📥 Data Collection**: Downloads historical EPL match data from football-data.co.uk for seasons 2014-15 to 2022-23.
+1. **📥 Data Collection**: Downloads historical EPL match data from football-data.co.uk for seasons 2000-01 to 2024-25.
 
 2. **🧹 Preprocessing**: Cleans the data, selects relevant columns (`HomeTeam`, `AwayTeam`, `FTHG`, `FTAG`), and encodes team names using LabelEncoder.
 
