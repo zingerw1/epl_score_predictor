@@ -6,8 +6,6 @@
 
 A sophisticated machine learning project to predict scores for English Premier League matches using Random Forest Regression. Built with Flask for an intuitive web interface. ⚽📊💻
 
-![EPL Predictor Demo](screenshots/demo.png)
-
 ## 📋 Table of Contents
 
 - [✨ Features](#✨-features)
