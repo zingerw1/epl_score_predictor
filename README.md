@@ -152,7 +152,7 @@ epl-score-predictor/
 
 ### Data Processing
 
-![Processing Dataset](static/screenshots/Processing%20dataset.png)
+![Processing Dataset](static/screenshots/Processing_dataset.png)
 
 ![Processing Dataset Finished](static/screenshots/processing_dataset_finished.png)
 
