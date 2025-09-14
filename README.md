@@ -191,6 +191,4 @@ This project is licensed under the **MIT License** 🟢 — see the [LICENSE](LI
 ## 📝 Notes
 
 - Models use XGBoost Regression with Poisson objective and advanced features for improved accuracy.
-- Features include team encodings, shots on target, corners, fouls, cards, rolling stats, form, strength, and interactions.
-- ⚠️ Check team name spelling if you get "Unknown team(s)" errors.
 - For issues, please open an issue on GitHub 🐙.
